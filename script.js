@@ -54,13 +54,22 @@ console.log(getComputerChoice());
 // console.log(getHumanChoice());
 
 // Function returns correct input or error
+// function getHumanChoice() {
+//   let choice = prompt("Write and select either rock, paper or scissor!");
+//     if (choice == 'rock') return choice;
+//        else if (choice == 'paper') return choice;
+//        else if (choice == 'rock') return choice;
+//        else if (choice == 'scissor') return choice;
+//     else return "Incorrect answer";
+// }
+// console.log(getHumanChoice());
+
+// Refactor to remove else if statements
 function getHumanChoice() {
-  let choice = prompt("Write and select either rock, paper or scissor!");
-    if (choice == 'rock') return choice;
-       else if (choice == 'paper') return choice;
-       else if (choice == 'rock') return choice;
-       else if (choice == 'scissor') return choice;
-    else return "Incorrect answer";
+  let choice = prompt("Enter either rock, paper or scissor!");
+  if (choice == "rock" || choice == "paper" || choice == "scissor") {
+    return choice;
+  } else return "Incorrect answer";
 }
 console.log(getHumanChoice());
 
