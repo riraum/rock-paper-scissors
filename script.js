@@ -10,13 +10,12 @@ console.log("Hello World!")
 // Create variable that returns a randomized integer of 1-3
 // Print return to console
 
+// Working code, but not contained in the function only
 function getComputerChoice(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
 }
-  // choice = Math.floor(Math.random() * max);
-  // return choice;
-const choice = ['rock','paper','scissor'];
+const choice = ["rock", "paper", "scissor"];
 const randomChoice = getComputerChoice(choice);
 
 console.log(randomChoice);
