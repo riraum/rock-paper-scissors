@@ -47,9 +47,20 @@ console.log(getComputerChoice());
 // If not return error
 
 // Function returns input
+// function getHumanChoice() {
+//   choice = prompt("Write and select either rock, paper or scissor!");
+//   return choice;
+// }
+// console.log(getHumanChoice());
+
+// Function returns correct input or error
 function getHumanChoice() {
-  choice = prompt("Write and select either rock, paper or scissor!");
-  return choice;
+  let choice = prompt("Write and select either rock, paper or scissor!");
+    if (choice == 'rock') return choice;
+       else if (choice == 'paper') return choice;
+       else if (choice == 'rock') return choice;
+       else if (choice == 'scissor') return choice;
+    else return "Incorrect answer";
 }
 console.log(getHumanChoice());
 
