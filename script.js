@@ -46,6 +46,12 @@ console.log(getComputerChoice());
 // If input is any of those, return the value
 // If not return error
 
+// Function returns input
+function getHumanChoice() {
+  choice = prompt("Write and select either rock, paper or scissor!");
+  return choice;
+}
+console.log(getHumanChoice());
 
 // Declare player score variables
 
