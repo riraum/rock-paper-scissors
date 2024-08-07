@@ -92,18 +92,28 @@ let computerScore = 0;
 // 4. Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // 5. Increment the humanScore or computerScore variable based on the round winner.
 
+// Partially done compare function
+// function playRound(humanChoice, computerChoice) {
+//   humanChoice.toLowerCase();
+//   computerChoice.toLowerCase();
+//   if (humanChoice == 'rock' && computerChoice == 'paper') {
+//     console.log("You lose! Paper beats Rock");
+//   } else if (humanChoice == 'rock' && computerChoice == 'scissor') {
+//     console.log("You win! Rock beats Scissor");
+//   } else if (humanChoice == 'paper' && 'scissor') {
+//     console.log("You lose! Scissor beats Paper")
+//   } else if (humanChoice == 'paper' && computerChoice == 'rock') {
+//     console.log("You win! Paper beats rock")
+//   } else console.log("Incomplete");
+// }
+
 function playRound(humanChoice, computerChoice) {
   humanChoice.toLowerCase();
   computerChoice.toLowerCase();
-  if (humanChoice == 'rock' && computerChoice == 'paper') {
-    console.log("You lose! Paper beats Rock");
-  } else if (humanChoice == 'rock' && computerChoice == 'scissor') {
-    console.log("You win! Rock beats Scissor");
-  } else if (humanChoice == 'paper' && 'scissor') {
-    console.log("You lose! Scissor beats Paper")
-  } else if (humanChoice == 'paper' && computerChoice == 'rock') {
-    console.log("You win! Paper beats rock")
-  } else console.log("Incomplete");
+  if (humanChoice == 'rock' && computerChoice == 'paper' || humanChoice == 'paper' && computerChoice == 'scissor') {
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+  } 
+  else console.log("Not yet added")
 }
 
 const humanSelection = getHumanChoice();
