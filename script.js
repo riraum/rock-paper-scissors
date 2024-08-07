@@ -78,6 +78,11 @@ console.log(getHumanChoice());
 // Create new variables humanScore and computerScore in the global scope
 // Set them up with the initial value of 0
 
+// Create two variables of humanScore and computerScore 
+// Set initial value of 0
+let humanScore = 0;
+let computerScore = 0;
+
 // Write the logic to play a single round
 
 // Create function playRound
