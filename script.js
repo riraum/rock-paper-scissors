@@ -11,14 +11,21 @@ console.log("Hello World!")
 // Print return to console
 
 // Working code, but not contained in the function only
-function getComputerChoice(array) {
-  const randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
-}
-const choice = ["rock", "paper", "scissor"];
-const randomChoice = getComputerChoice(choice);
+// function getComputerChoice(array) {
+//   const randomIndex = Math.floor(Math.random() * array.length);
+//   return array[randomIndex];
+// }
+// const choice = ["rock", "paper", "scissor"];
+// const randomChoice = getComputerChoice(choice);
 
-console.log(randomChoice);
+// console.log(randomChoice);
+
+// Returning random value
+function getComputerChoice() {
+  const array = ['rock','paper','scissor'];
+  return Math.floor(Math.random() * array.length);
+}
+console.log(getComputerChoice());
 
 // Write logic to get human choice
 
