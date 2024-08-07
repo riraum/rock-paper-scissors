@@ -21,9 +21,17 @@ console.log("Hello World!")
 // console.log(randomChoice);
 
 // Returning random value
+// function getComputerChoice() {
+//   const array = ['rock','paper','scissor'];
+//   return Math.floor(Math.random() * array.length);
+// }
+// console.log(getComputerChoice());
+
+// Refactor complete
 function getComputerChoice() {
   const array = ['rock','paper','scissor'];
-  return Math.floor(Math.random() * array.length);
+  const randomIndex = Math.floor(Math.random() *array.length);
+  return array[randomIndex];
 }
 console.log(getComputerChoice());
 
