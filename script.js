@@ -41,6 +41,12 @@ console.log(getComputerChoice());
 // Function should return valid choice based on user input
 // Test that the function returns what's expected
 
+// Create function getHumanChoice
+// Prompt user for input of rock, paper or scissors
+// If input is any of those, return the value
+// If not return error
+
+
 // Declare player score variables
 
 // Create new variables humanScore and computerScore in the global scope
