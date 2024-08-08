@@ -107,13 +107,22 @@ let computerScore = 0;
 //   } else console.log("Incomplete");
 // }
 
+// Function with complete win, lose and tie logic
 function playRound(humanChoice, computerChoice) {
   humanChoice.toLowerCase();
   computerChoice.toLowerCase();
   if (humanChoice == 'rock' && computerChoice == 'paper' || humanChoice == 'paper' && computerChoice == 'scissor') {
     console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-  } 
-  else console.log("Not yet added")
+    computerScore = +1;
+    console.log(`Computer score is ${computerScore}`);
+  } else if (humanChoice == 'rock' && computerChoice == 'scissor' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissor' && computerChoice == 'paper') {
+    console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    humanScore = +1;
+    console.log(`Human score is ${humanScore}`);
+  } else if (humanChoice == computerChoice) {
+    console.log("Tie! None gets a point");
+  }
+  else console.log("Not yet added");
 }
 
 const humanSelection = getHumanChoice();
