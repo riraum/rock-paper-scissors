@@ -96,8 +96,7 @@ function playGame() {
     ) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
       computerScore++;
-      console.log(`Computer score is ${computerScore}`);
-      console.log(`Human score is ${humanScore}`);
+      console.log(`Computer score: ${computerScore} \n\Human score: ${humanScore}`);
     } else if (
       (humanChoice == "rock" && computerChoice == "scissor") ||
       (humanChoice == "paper" && computerChoice == "rock") ||
@@ -105,8 +104,7 @@ function playGame() {
     ) {
       console.log(`You win! ${humanChoice} beats ${computerChoice}`);
       humanScore++;
-      console.log(`Human score is ${humanScore}`);
-      console.log(`Computer score is ${computerScore}`);
+      console.log(`Computer score: ${computerScore} \n\Human score: ${humanScore}`);
     } else if (humanChoice == computerChoice) {
       console.log("Tie! None gets a point");
     } else console.log("Error, combination not yet added");
