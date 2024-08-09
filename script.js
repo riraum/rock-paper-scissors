@@ -6,9 +6,9 @@ console.log("Hello World!")
 
 // Refactor complete
 function getComputerChoice() {
-  const array = ['rock','paper','scissor'];
-  const randomIndex = Math.floor(Math.random() *array.length);
-  return array[randomIndex];
+  const selectionOptions = ['rock','paper','scissor'];
+  const randomIndex = Math.floor(Math.random() *selectionOptions.length);
+  return selectionOptions[randomIndex];
 }
 // console.log(getComputerChoice());
 
@@ -46,7 +46,8 @@ function playGame() {
   function playRound(humanChoice, computerChoice) {
     if (
       (humanChoice == "rock" && computerChoice == "paper") ||
-      (humanChoice == "paper" && computerChoice == "scissor")
+      (humanChoice == "paper" && computerChoice == "scissor") || 
+      (humanChoice == "scissor" && computerChoice == "rock")
     ) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
       computerScore++;
