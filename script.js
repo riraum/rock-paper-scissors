@@ -112,12 +112,15 @@ function playGame() {
   // Play game
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
-  // Print computer choice
-  console.log(`Computer chose ${computerSelection}`);
-  // Print human choice
-  console.log(`Human chose ${humanSelection}`);
+  // Print choices
+  console.log(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
   playRound(humanSelection, computerSelection);
   }
+  if (humanScore > computerScore)
+    console.log("Human won the game, congratulations!");
+  else if (computerScore > humanScore)
+    console.log("Computer won the game, better luck next time human!");
+  else console.log("It's a tie. Give it another go to get a winner!");
 }
 playGame();
-console.log("Game end");
+// console.log("Game end");
