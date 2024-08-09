@@ -10,7 +10,7 @@ function getComputerChoice() {
   const randomIndex = Math.floor(Math.random() *array.length);
   return array[randomIndex];
 }
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 // Write logic to get human choice
 // Create function getHumanChoice
@@ -47,11 +47,11 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   humanChoice.toLowerCase();
   computerChoice.toLowerCase();
-  if (humanChoice == 'rock' && computerChoice == 'paper' || humanChoice == 'paper' && computerChoice == 'scissor') {
+  if ((humanChoice == 'rock' && computerChoice == 'paper') || (humanChoice == 'paper' && computerChoice == 'scissor')) {
     console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
     computerScore = +1;
     console.log(`Computer score is ${computerScore}`);
-  } else if (humanChoice == 'rock' && computerChoice == 'scissor' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissor' && computerChoice == 'paper') {
+  } else if ((humanChoice == 'rock' && computerChoice == 'scissor') || (humanChoice == 'paper' && computerChoice == 'rock') || (humanChoice == 'scissor' && computerChoice == 'paper')) {
     console.log(`You win! ${humanChoice} beats ${computerChoice}`);
     humanScore = +1;
     console.log(`Human score is ${humanScore}`);
@@ -61,8 +61,13 @@ function playRound(humanChoice, computerChoice) {
   else console.log("Not yet added");
 }
 
+// Play game
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
+// Print computer choice
+console.log(`Computer chose ${computerSelection}`);
+// Print human choice
+console.log(`Human chose ${humanSelection}`);
 playRound(humanSelection, computerSelection);
 
 
