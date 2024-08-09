@@ -20,9 +20,10 @@ function getComputerChoice() {
 // Refactor to remove else if statements
 function getHumanChoice() {
   let choice = prompt("Enter either rock, paper or scissor!");
+  choice = choice.toLowerCase();
   if (choice == "rock" || choice == "paper" || choice == "scissor") {
     return choice;
-  } else return "Incorrect answer";
+  } else return "incorrect input";
 }
 // debug log
 // console.log(getHumanChoice());
@@ -45,8 +46,8 @@ let computerScore = 0;
 
 // Function with complete win, lose and tie logic
 function playRound(humanChoice, computerChoice) {
-  humanChoice.toLowerCase();
-  computerChoice.toLowerCase();
+  // humanChoice.toLowerCase();
+  // computerChoice.toLowerCase();
   if ((humanChoice == 'rock' && computerChoice == 'paper') || (humanChoice == 'paper' && computerChoice == 'scissor')) {
     console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
     computerScore = +1;
@@ -58,7 +59,7 @@ function playRound(humanChoice, computerChoice) {
   } else if (humanChoice == computerChoice) {
     console.log("Tie! None gets a point");
   }
-  else console.log("Not yet added");
+  else console.log("Error, combination not yet added");
 }
 
 // Play game
