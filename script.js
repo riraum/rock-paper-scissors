@@ -83,6 +83,7 @@ let computerScore = 0;
 
 
 function playGame() {
+  for (let step = 0; step <5; step++) {
   function playRound(humanChoice, computerChoice) {
     // humanChoice.toLowerCase();
     // computerChoice.toLowerCase();
@@ -113,5 +114,6 @@ function playGame() {
   // Print human choice
   console.log(`Human chose ${humanSelection}`);
   playRound(humanSelection, computerSelection);
+  }
 }
 playGame();
