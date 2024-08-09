@@ -45,31 +45,73 @@ let computerScore = 0;
 // 5. Increment the humanScore or computerScore variable based on the round winner.
 
 // Function with complete win, lose and tie logic
-function playRound(humanChoice, computerChoice) {
-  // humanChoice.toLowerCase();
-  // computerChoice.toLowerCase();
-  if ((humanChoice == 'rock' && computerChoice == 'paper') || (humanChoice == 'paper' && computerChoice == 'scissor')) {
-    console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-    computerScore = +1;
-    console.log(`Computer score is ${computerScore}`);
-  } else if ((humanChoice == 'rock' && computerChoice == 'scissor') || (humanChoice == 'paper' && computerChoice == 'rock') || (humanChoice == 'scissor' && computerChoice == 'paper')) {
-    console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    humanScore = +1;
-    console.log(`Human score is ${humanScore}`);
-  } else if (humanChoice == computerChoice) {
-    console.log("Tie! None gets a point");
+// function playRound(humanChoice, computerChoice) {
+//   // humanChoice.toLowerCase();
+//   // computerChoice.toLowerCase();
+//   if ((humanChoice == 'rock' && computerChoice == 'paper') || (humanChoice == 'paper' && computerChoice == 'scissor')) {
+//     console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+//     computerScore = +1;
+//     console.log(`Computer score is ${computerScore}`);
+//   } else if ((humanChoice == 'rock' && computerChoice == 'scissor') || (humanChoice == 'paper' && computerChoice == 'rock') || (humanChoice == 'scissor' && computerChoice == 'paper')) {
+//     console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+//     humanScore = +1;
+//     console.log(`Human score is ${humanScore}`);
+//   } else if (humanChoice == computerChoice) {
+//     console.log("Tie! None gets a point");
+//   }
+//   else console.log("Error, combination not yet added");
+// }
+
+// // Play game
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
+// // Print computer choice
+// console.log(`Computer chose ${computerSelection}`);
+// // Print human choice
+// console.log(`Human chose ${humanSelection}`);
+// playRound(humanSelection, computerSelection);
+
+// Add logic to play an entire game
+// Game will be 5 rounds, write function playGame that calls playRound, keeps scores and declares winner.
+// Create a new function named playGame.
+// Move your playRound function and score variables so that they’re declared inside of the new playGame function
+// Play 5 rounds by calling playRound 5 times.
+
+//     Hint: When you assign a function call to a variable, the return value of that function is assigned to the variable. Accessing the variable afterward will only provide the assigned value; it doesn’t recall the function. You need to recall the choice functions to get new choices for each round.
+
+
+
+
+function playGame() {
+  function playRound(humanChoice, computerChoice) {
+    // humanChoice.toLowerCase();
+    // computerChoice.toLowerCase();
+    if (
+      (humanChoice == "rock" && computerChoice == "paper") ||
+      (humanChoice == "paper" && computerChoice == "scissor")
+    ) {
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+      computerScore = +1;
+      console.log(`Computer score is ${computerScore}`);
+    } else if (
+      (humanChoice == "rock" && computerChoice == "scissor") ||
+      (humanChoice == "paper" && computerChoice == "rock") ||
+      (humanChoice == "scissor" && computerChoice == "paper")
+    ) {
+      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+      humanScore = +1;
+      console.log(`Human score is ${humanScore}`);
+    } else if (humanChoice == computerChoice) {
+      console.log("Tie! None gets a point");
+    } else console.log("Error, combination not yet added");
   }
-  else console.log("Error, combination not yet added");
+  // Play game
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  // Print computer choice
+  console.log(`Computer chose ${computerSelection}`);
+  // Print human choice
+  console.log(`Human chose ${humanSelection}`);
+  playRound(humanSelection, computerSelection);
 }
-
-// Play game
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-// Print computer choice
-console.log(`Computer chose ${computerSelection}`);
-// Print human choice
-console.log(`Human chose ${humanSelection}`);
-playRound(humanSelection, computerSelection);
-
-
-
+playGame();
