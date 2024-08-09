@@ -32,8 +32,8 @@ function getHumanChoice() {
 // Create new variables humanScore and computerScore in the global scope
 // Set them up with the initial value of 0
 
-let humanScore = 0;
-let computerScore = 0;
+// let humanScore = 0;
+// let computerScore = 0;
 
 // Write the logic to play a single round
 // Your game will be played round by round. You will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
@@ -83,25 +83,30 @@ let computerScore = 0;
 
 
 function playGame() {
+  // Declare score values
+  let humanScore = 0;
+  let computerScore = 0;
+  // Loop function, run it 5 times
   for (let step = 0; step <5; step++) {
+  // Function that has the main game logic
   function playRound(humanChoice, computerChoice) {
-    // humanChoice.toLowerCase();
-    // computerChoice.toLowerCase();
     if (
       (humanChoice == "rock" && computerChoice == "paper") ||
       (humanChoice == "paper" && computerChoice == "scissor")
     ) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-      computerScore = +1;
+      computerScore++;
       console.log(`Computer score is ${computerScore}`);
+      console.log(`Human score is ${humanScore}`);
     } else if (
       (humanChoice == "rock" && computerChoice == "scissor") ||
       (humanChoice == "paper" && computerChoice == "rock") ||
       (humanChoice == "scissor" && computerChoice == "paper")
     ) {
       console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-      humanScore = +1;
+      humanScore++;
       console.log(`Human score is ${humanScore}`);
+      console.log(`Computer score is ${computerScore}`);
     } else if (humanChoice == computerChoice) {
       console.log("Tie! None gets a point");
     } else console.log("Error, combination not yet added");
@@ -117,3 +122,4 @@ function playGame() {
   }
 }
 playGame();
+console.log("Game end");
