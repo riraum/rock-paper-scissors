@@ -18,13 +18,13 @@ function getComputerChoice() {
 // Test that the function returns what's expected
 
 // Refactor to remove else if statements
-function getHumanChoice() {
-  let choice = prompt("Enter either rock, paper or scissor!");
-  choice = choice.toLowerCase();
-  if (choice == "rock" || choice == "paper" || choice == "scissor") {
-    return choice;
-  } else return "incorrect input";
-}
+// function getHumanChoice() {
+//   let choice = prompt("Enter either rock, paper or scissor!");
+//   choice = choice.toLowerCase();
+//   if (choice == "rock" || choice == "paper" || choice == "scissor") {
+//     return choice;
+//   } else return "incorrect input";
+// }
 // debug log
 // console.log(getHumanChoice());
 
@@ -70,7 +70,7 @@ function playGame() {
   // Function that has the main game logic
   // Play game
   playRound();
-  const humanSelection = getHumanChoice();
+  // const humanSelection = playerSelection;
   const computerSelection = getComputerChoice();
   // Print choices
   console.log(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
@@ -85,8 +85,9 @@ function playGame() {
 playGame();
 // console.log("Game end");
 const rockbtn = document.querySelector("#btn-rock");
-// rockbtn.addEventListener("click", () => {
-//   playRound
-// })
+rockbtn.addEventListener("click", () => {
+  console.log("Rock btn");
+  // playRound("rock");
+})
 const paperbtn = document.querySelector("#btn-paper");
 const scissorsbtn = document.querySelector("#btn-scissors");
