@@ -35,7 +35,31 @@ function getHumanChoice() {
 // Play 5 rounds by calling playRound 5 times.
 
 //     Hint: When you assign a function call to a variable, the return value of that function is assigned to the variable. Accessing the variable afterward will only provide the assigned value; it doesn’t recall the function. You need to recall the choice functions to get new choices for each round.
-
+  function playRound(humanChoice, computerChoice) {
+    if (
+      (humanChoice == "rock" && computerChoice == "paper") ||
+      (humanChoice == "paper" && computerChoice == "scissor") ||
+      (humanChoice == "scissor" && computerChoice == "rock")
+    ) {
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+      computerScore++;
+      console.log(
+        `Computer score: ${computerScore} \n\Human score: ${humanScore}`
+      );
+    } else if (
+      (humanChoice == "rock" && computerChoice == "scissor") ||
+      (humanChoice == "paper" && computerChoice == "rock") ||
+      (humanChoice == "scissor" && computerChoice == "paper")
+    ) {
+      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+      humanScore++;
+      console.log(
+        `Computer score: ${computerScore} \n\Human score: ${humanScore}`
+      );
+    } else if (humanChoice == computerChoice) {
+      console.log("Tie! None gets a point");
+    } else console.log("Error, combination not yet added");
+  }
 function playGame() {
   // Declare score values
   let humanScore = 0;
@@ -44,28 +68,8 @@ function playGame() {
   // for (let step = 0; step <5; step++) 
   {
   // Function that has the main game logic
-  function playRound(humanChoice, computerChoice) {
-    if (
-      (humanChoice == "rock" && computerChoice == "paper") ||
-      (humanChoice == "paper" && computerChoice == "scissor") || 
-      (humanChoice == "scissor" && computerChoice == "rock")
-    ) {
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-      computerScore++;
-      console.log(`Computer score: ${computerScore} \n\Human score: ${humanScore}`);
-    } else if (
-      (humanChoice == "rock" && computerChoice == "scissor") ||
-      (humanChoice == "paper" && computerChoice == "rock") ||
-      (humanChoice == "scissor" && computerChoice == "paper")
-    ) {
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-      humanScore++;
-      console.log(`Computer score: ${computerScore} \n\Human score: ${humanScore}`);
-    } else if (humanChoice == computerChoice) {
-      console.log("Tie! None gets a point");
-    } else console.log("Error, combination not yet added");
-  }
   // Play game
+  playRound();
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   // Print choices
@@ -81,5 +85,8 @@ function playGame() {
 playGame();
 // console.log("Game end");
 const rockbtn = document.querySelector("#btn-rock");
+// rockbtn.addEventListener("click", () => {
+//   playRound
+// })
 const paperbtn = document.querySelector("#btn-paper");
 const scissorsbtn = document.querySelector("#btn-scissors");
