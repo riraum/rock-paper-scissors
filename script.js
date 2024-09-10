@@ -41,7 +41,8 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   // Loop function, run it 5 times
-  for (let step = 0; step <5; step++) {
+  // for (let step = 0; step <5; step++) 
+  {
   // Function that has the main game logic
   function playRound(humanChoice, computerChoice) {
     if (
@@ -79,3 +80,6 @@ function playGame() {
 }
 playGame();
 // console.log("Game end");
+const rockbtn = document.querySelector("#btn-rock");
+const paperbtn = document.querySelector("#btn-paper");
+const scissorsbtn = document.querySelector("#btn-scissors");
