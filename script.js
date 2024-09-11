@@ -79,12 +79,19 @@ function playGame(humanButtonSelection) {
   playRound(humanSelection, computerSelection);
   }
   if (humanScore >= 5 || computerScore >= 5) {
-  if (humanScore > computerScore)
-    console.log("Human won the game, congratulations!");
-  else if (computerScore > humanScore)
-    console.log("Computer won the game, better luck next time human!");
-  else console.log("It's a tie. Give it another go to get a winner!");
-}
+    if (humanScore > computerScore) {
+      console.log("Human won the game, congratulations!");
+      resultDiv.textContent = "Human won the game, congratulations!";
+    }
+    else if (computerScore > humanScore) {
+      console.log("Computer won the game, better luck next time human!");
+      resultDiv.textContent = "Computer won the game, better luck next time human!";
+    }
+    else {
+      console.log("Computer won the game, better luck next time human!");
+      resultDiv.textContent = "It's a tie. Give it another go to get a winner!";
+    }
+  }
 }
 // playGame(humanButtonChoice);
 // console.log("Game end");
@@ -107,3 +114,5 @@ function onScissorsClick(){
   console.log("Scissors btn");
   playGame("scissor");
 }
+const resultDiv = document.querySelector("#result");
+resultDiv.textContent = "Test";
