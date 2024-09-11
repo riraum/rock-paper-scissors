@@ -13,20 +13,20 @@ function getComputerChoice() {
 // console.log(getComputerChoice());
 
 // Write logic to get human choice
-// Create function getHumanChoice
+// Create function gethumanSelection
 // Function should return valid choice based on user input
 // Test that the function returns what's expected
 
 // Refactor to remove else if statements
-// function getHumanChoice() {
-//   let choice = prompt("Enter either rock, paper or scissor!");
-//   choice = choice.toLowerCase();
-//   if (choice == "rock" || choice == "paper" || choice == "scissor") {
-//     return choice;
-//   } else return "incorrect input";
+// function gethumanSelection() {
+  // let choice = prompt("Enter either rock, paper or scissor!");
+  // choice = choice.toLowerCase();
+  // if (choice == "rock" || choice == "paper" || choice == "scissor") {
+  //   return choice;
+  // } else return "incorrect input";
 // }
 // debug log
-// console.log(getHumanChoice());
+// console.log(gethumanSelection());
 
 // Add logic to play an entire game
 // Game will be 5 rounds, write function playGame that calls playRound, keeps scores and declares winner.
@@ -35,6 +35,8 @@ function getComputerChoice() {
 // Play 5 rounds by calling playRound 5 times.
 
 //     Hint: When you assign a function call to a variable, the return value of that function is assigned to the variable. Accessing the variable afterward will only provide the assigned value; it doesn’t recall the function. You need to recall the choice functions to get new choices for each round.
+let humanScore = 0;
+let computerScore = 0;
   function playRound(humanChoice, computerChoice) {
     if (
       (humanChoice == "rock" && computerChoice == "paper") ||
@@ -60,33 +62,36 @@ function getComputerChoice() {
       console.log("Tie! None gets a point");
     } else console.log("Error, combination not yet added");
   }
-function playGame() {
+function playGame(humanButtonSelection) {
   // Declare score values
-  let humanScore = 0;
-  let computerScore = 0;
+  // let humanScore = 0;
+  // let computerScore = 0;
   // Loop function, run it 5 times
   // for (let step = 0; step <5; step++) 
   {
   // Function that has the main game logic
   // Play game
   playRound();
-  const humanSelection = "";
+  const humanSelection = humanButtonSelection;
   const computerSelection = getComputerChoice();
   // Print choices
   console.log(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
   playRound(humanSelection, computerSelection);
   }
+  if (humanScore >= 5 || computerScore >= 5) {
   if (humanScore > computerScore)
     console.log("Human won the game, congratulations!");
   else if (computerScore > humanScore)
     console.log("Computer won the game, better luck next time human!");
   else console.log("It's a tie. Give it another go to get a winner!");
 }
-playGame();
+}
+// playGame(humanButtonChoice);
 // console.log("Game end");
 const rockbtn = document.querySelector("#btn-rock");
 function onRockClick(){
   console.log("Rock btn");
+  playGame("rock");
 }
 // rockbtn.addEventListener("click", () => {
 //   console.log("Rock btn");
@@ -95,8 +100,10 @@ function onRockClick(){
 const paperbtn = document.querySelector("#btn-paper");
 function onPaperClick(){
   console.log("Paper btn");
+  playGame("paper");
 }
 const scissorsbtn = document.querySelector("#btn-scissors");
 function onScissorsClick(){
   console.log("Scissors btn");
+  playGame("scissor");
 }
