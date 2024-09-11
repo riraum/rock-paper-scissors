@@ -23,74 +23,80 @@ let computerScore = 0;
       (humanChoice == "paper" && computerChoice == "scissor") ||
       (humanChoice == "scissor" && computerChoice == "rock")
     ) {
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+      let message = `You lose! ${computerChoice} beats ${humanChoice}`;
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
       computerScore++;
-      console.log(
-        `Computer score: ${computerScore} \n\Human score: ${humanScore}`
-      );
+      message = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     } else if (
       (humanChoice == "rock" && computerChoice == "scissor") ||
       (humanChoice == "paper" && computerChoice == "rock") ||
       (humanChoice == "scissor" && computerChoice == "paper")
     ) {
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+      message = `You win! ${humanChoice} beats ${computerChoice}`;
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
       humanScore++;
-      console.log(
-        `Computer score: ${computerScore} \n\Human score: ${humanScore}`
-      );
+      message = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     } else if (humanChoice == computerChoice) {
-      console.log("Tie! None gets a point");
+      message = "Tie! None gets a point";
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = "Tie! None gets a point";
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     } else {
-      console.log("Error, combination not yet added");
+      message = "Error, combination not yet added";
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = "Error, combination not yet added";
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     }
   }
 function playGame(humanButtonSelection) {
   playRound();
+
   const humanSelection = humanButtonSelection;
   const computerSelection = getComputerChoice();
-  // Print choices
-  console.log(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
+
+  let message = `Computer chose ${computerSelection} \n\Human chose ${humanSelection}`;
+  console.log(message);
   gameData.classList.add("gameData");
-  gameData.textContent = `Computer chose ${computerSelection} \n\Human chose ${humanSelection}`;
+  gameData.textContent = message;
   resultDiv.appendChild(gameData);
 
   playRound(humanSelection, computerSelection);
   if (humanScore >= 5 || computerScore >= 5) {
     if (humanScore > computerScore) {
-      console.log("Human won the game, congratulations!");
+      message = "Human won the game, congratulations!";
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = "Human won the game, congratulations!";
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     }
     else if (computerScore > humanScore) {
-      console.log("Computer won the game, better luck next time human!");
+      message = "Computer won the game, better luck next time human!";
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent =
-        "Computer won the game, better luck next time human!";
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     }
     else {
-      console.log("Computer won the game, better luck next time human!");
+      message = "It's a tie. Give it another go to get a winner!";
+      console.log(message);
       gameData.classList.add("gameData");
-      gameData.textContent = "It's a tie. Give it another go to get a winner!";
+      gameData.textContent = message;
       resultDiv.appendChild(gameData);
     }
   }
