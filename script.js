@@ -106,13 +106,11 @@ function playGame(humanButtonSelection) {
 function onRockClick(){
   playGame("rock");
 }
-const paperbtn = document.querySelector("#btn-paper");
 
 function onPaperClick(){
   // console.log("Paper btn");
   playGame("paper");
 }
-const scissorsbtn = document.querySelector("#btn-scissors");
 
 function onScissorsClick(){
   playGame("scissor");
