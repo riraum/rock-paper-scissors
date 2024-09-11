@@ -1,4 +1,4 @@
-console.log("Hello World!")
+console.log("Game initialized")
 // Write logic to get computer choice
 // Create function getComputerChoice
 // Function should return randomly rock or paper or scissors
@@ -44,23 +44,49 @@ let computerScore = 0;
       (humanChoice == "scissor" && computerChoice == "rock")
     ) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+      gameData.classList.add("gameData");
+      gameData.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
       computerScore++;
       console.log(
         `Computer score: ${computerScore} \n\Human score: ${humanScore}`
       );
+      gameData.classList.add("gameData");
+      gameData.textContent = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
     } else if (
       (humanChoice == "rock" && computerChoice == "scissor") ||
       (humanChoice == "paper" && computerChoice == "rock") ||
       (humanChoice == "scissor" && computerChoice == "paper")
     ) {
       console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+      gameData.classList.add("gameData");
+      gameData.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
       humanScore++;
       console.log(
         `Computer score: ${computerScore} \n\Human score: ${humanScore}`
       );
+      gameData.classList.add("gameData");
+      gameData.textContent = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
     } else if (humanChoice == computerChoice) {
       console.log("Tie! None gets a point");
-    } else console.log("Error, combination not yet added");
+      gameData.classList.add("gameData");
+      gameData.textContent = "Tie! None gets a point";
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = "Tie! None gets a point";
+    } else {
+      console.log("Error, combination not yet added");
+      gameData.classList.add("gameData");
+      gameData.textContent = "Error, combination not yet added";
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = "Error, combination not yet added"
+    }
   }
 function playGame(humanButtonSelection) {
   // Declare score values
@@ -76,20 +102,34 @@ function playGame(humanButtonSelection) {
   const computerSelection = getComputerChoice();
   // Print choices
   console.log(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
+  gameData.classList.add("gameData");
+  gameData.textContent = `Computer chose ${computerSelection} \n\Human chose ${humanSelection}`;
+  resultDiv.appendChild(gameData);
+  // resultDiv.textContent = `Computer chose ${computerSelection} \n\Human chose ${humanSelection}`;
   playRound(humanSelection, computerSelection);
   }
   if (humanScore >= 5 || computerScore >= 5) {
     if (humanScore > computerScore) {
       console.log("Human won the game, congratulations!");
-      resultDiv.textContent = "Human won the game, congratulations!";
+      gameData.classList.add("gameData");
+      gameData.textContent = "Human won the game, congratulations!";
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = "Human won the game, congratulations!";
     }
     else if (computerScore > humanScore) {
       console.log("Computer won the game, better luck next time human!");
-      resultDiv.textContent = "Computer won the game, better luck next time human!";
+      gameData.classList.add("gameData");
+      gameData.textContent =
+        "Computer won the game, better luck next time human!";
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = "Computer won the game, better luck next time human!";
     }
     else {
       console.log("Computer won the game, better luck next time human!");
-      resultDiv.textContent = "It's a tie. Give it another go to get a winner!";
+      gameData.classList.add("gameData");
+      gameData.textContent = "It's a tie. Give it another go to get a winner!";
+      resultDiv.appendChild(gameData);
+      // resultDiv.textContent = "It's a tie. Give it another go to get a winner!";
     }
   }
 }
@@ -115,4 +155,8 @@ function onScissorsClick(){
   playGame("scissor");
 }
 const resultDiv = document.querySelector("#result");
-resultDiv.textContent = "Test";
+const gameData = document.createElement("div");
+// gameData.classList.add("gameData");
+// gameData.textContent = "Test"
+// resultDiv.appendChild(gameData);
+// resultDiv.textContent = "Test";
