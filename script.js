@@ -70,7 +70,7 @@ function playGame() {
   // Function that has the main game logic
   // Play game
   playRound();
-  // const humanSelection = playerSelection;
+  const humanSelection = "";
   const computerSelection = getComputerChoice();
   // Print choices
   console.log(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
@@ -85,9 +85,18 @@ function playGame() {
 playGame();
 // console.log("Game end");
 const rockbtn = document.querySelector("#btn-rock");
-rockbtn.addEventListener("click", () => {
+function onRockClick(){
   console.log("Rock btn");
+}
+// rockbtn.addEventListener("click", () => {
+//   console.log("Rock btn");
   // playRound("rock");
-})
+// })
 const paperbtn = document.querySelector("#btn-paper");
+function onPaperClick(){
+  console.log("Paper btn");
+}
 const scissorsbtn = document.querySelector("#btn-scissors");
+function onScissorsClick(){
+  console.log("Scissors btn");
+}
