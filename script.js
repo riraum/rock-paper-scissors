@@ -1,4 +1,8 @@
 console.log("Game initialized")
+const resultDiv = document.querySelector("#result");
+const gameMessage = document.createElement("div");
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   const selectionOptions = ['rock','paper','scissor'];
@@ -13,10 +17,6 @@ function getComputerChoice() {
   //   return choice;
   // } else return "incorrect input";
 // }
-
-let humanScore = 0;
-let computerScore = 0;
-
   function playRound(humanChoice, computerChoice) {
     if (
       (humanChoice == "rock" && computerChoice == "paper") ||
@@ -25,15 +25,13 @@ let computerScore = 0;
     ) {
       let message = `You lose! ${computerChoice} beats ${humanChoice}`;
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
       computerScore++;
       message = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     } else if (
       (humanChoice == "rock" && computerChoice == "scissor") ||
       (humanChoice == "paper" && computerChoice == "rock") ||
@@ -41,27 +39,23 @@ let computerScore = 0;
     ) {
       message = `You win! ${humanChoice} beats ${computerChoice}`;
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
       humanScore++;
       message = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     } else if (humanChoice == computerChoice) {
       message = "Tie! None gets a point";
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     } else {
       message = "Error, combination not yet added";
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     }
   }
 function playGame(humanButtonSelection) {
@@ -72,32 +66,28 @@ function playGame(humanButtonSelection) {
 
   let message = `Computer chose ${computerSelection} \n\Human chose ${humanSelection}`;
   console.log(message);
-  gameData.classList.add("gameData");
-  gameData.textContent = message;
-  resultDiv.appendChild(gameData);
+  gameMessage.textContent = message;
+  resultDiv.appendChild(gameMessage);
 
   playRound(humanSelection, computerSelection);
   if (humanScore >= 5 || computerScore >= 5) {
     if (humanScore > computerScore) {
       message = "Human won the game, congratulations!";
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     }
     else if (computerScore > humanScore) {
       message = "Computer won the game, better luck next time human!";
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     }
     else {
       message = "It's a tie. Give it another go to get a winner!";
       console.log(message);
-      gameData.classList.add("gameData");
-      gameData.textContent = message;
-      resultDiv.appendChild(gameData);
+      gameMessage.textContent = message;
+      resultDiv.appendChild(gameMessage);
     }
   }
 }
@@ -115,5 +105,3 @@ function onPaperClick(){
 function onScissorsClick(){
   playGame("scissor");
 }
-const resultDiv = document.querySelector("#result");
-const gameData = document.createElement("div");
