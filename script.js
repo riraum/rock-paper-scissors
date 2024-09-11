@@ -102,7 +102,6 @@ function playGame(humanButtonSelection) {
   }
 }
 
-const rockbtn = document.querySelector("#btn-rock");
 
 function onRockClick(){
   playGame("rock");
