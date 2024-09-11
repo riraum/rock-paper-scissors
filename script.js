@@ -67,16 +67,3 @@ function playGame(humanButtonSelection) {
     }
   }
 }
-
-function onRockClick(){
-  playGame("rock");
-}
-
-function onPaperClick(){
-  // console.log("Paper btn");
-  playGame("paper");
-}
-
-function onScissorsClick(){
-  playGame("scissor");
-}
