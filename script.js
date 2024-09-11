@@ -17,45 +17,33 @@ function getComputerChoice() {
   //   return choice;
   // } else return "incorrect input";
 // }
+
+function logMessage(message) {
+  console.log(message);
+  gameMessage.textContent = message;
+  resultDiv.appendChild(gameMessage); 
+}
   function playRound(humanChoice, computerChoice) {
     if (
       (humanChoice == "rock" && computerChoice == "paper") ||
       (humanChoice == "paper" && computerChoice == "scissor") ||
       (humanChoice == "scissor" && computerChoice == "rock")
     ) {
-      let message = `You lose! ${computerChoice} beats ${humanChoice}`;
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage(`You lose! ${computerChoice} beats ${humanChoice}`);
       computerScore++;
-      message = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage(`Computer score: ${computerScore} \n\Human score: ${humanScore}`);
     } else if (
       (humanChoice == "rock" && computerChoice == "scissor") ||
       (humanChoice == "paper" && computerChoice == "rock") ||
       (humanChoice == "scissor" && computerChoice == "paper")
     ) {
-      message = `You win! ${humanChoice} beats ${computerChoice}`;
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage(`You win! ${humanChoice} beats ${computerChoice}`);
       humanScore++;
-      message = `Computer score: ${computerScore} \n\Human score: ${humanScore}`;
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage(`Computer score: ${computerScore} \n\Human score: ${humanScore}`);
     } else if (humanChoice == computerChoice) {
-      message = "Tie! None gets a point";
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage("Tie! None gets a point");
     } else {
-      message = "Error, combination not yet added";
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage("Error, combination not yet added");
     }
   }
 function playGame(humanButtonSelection) {
@@ -64,34 +52,21 @@ function playGame(humanButtonSelection) {
   const humanSelection = humanButtonSelection;
   const computerSelection = getComputerChoice();
 
-  let message = `Computer chose ${computerSelection} \n\Human chose ${humanSelection}`;
-  console.log(message);
-  gameMessage.textContent = message;
-  resultDiv.appendChild(gameMessage);
+  logMessage(`Computer chose ${computerSelection} \n\Human chose ${humanSelection}`);
 
   playRound(humanSelection, computerSelection);
   if (humanScore >= 5 || computerScore >= 5) {
     if (humanScore > computerScore) {
-      message = "Human won the game, congratulations!";
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage("Human won the game, congratulations!");
     }
     else if (computerScore > humanScore) {
-      message = "Computer won the game, better luck next time human!";
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage("Computer won the game, better luck next time human!");
     }
     else {
-      message = "It's a tie. Give it another go to get a winner!";
-      console.log(message);
-      gameMessage.textContent = message;
-      resultDiv.appendChild(gameMessage);
+      logMessage("It's a tie. Give it another go to get a winner!");
     }
   }
 }
-
 
 function onRockClick(){
   playGame("rock");
