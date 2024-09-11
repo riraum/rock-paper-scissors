@@ -137,7 +137,7 @@ function playGame(humanButtonSelection) {
 // console.log("Game end");
 const rockbtn = document.querySelector("#btn-rock");
 function onRockClick(){
-  console.log("Rock btn");
+  // console.log("Rock btn");
   playGame("rock");
 }
 // rockbtn.addEventListener("click", () => {
@@ -146,12 +146,12 @@ function onRockClick(){
 // })
 const paperbtn = document.querySelector("#btn-paper");
 function onPaperClick(){
-  console.log("Paper btn");
+  // console.log("Paper btn");
   playGame("paper");
 }
 const scissorsbtn = document.querySelector("#btn-scissors");
 function onScissorsClick(){
-  console.log("Scissors btn");
+  // console.log("Scissors btn");
   playGame("scissor");
 }
 const resultDiv = document.querySelector("#result");
